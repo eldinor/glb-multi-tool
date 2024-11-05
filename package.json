@@ -2,9 +2,11 @@
   "name": "glb-multitool",
   "private": false,
   "version": "0.0.1",
-  "author": {"name": "Andrei Stepanov",
-  "email": "eldinor@gmail.com",
-  "url": "https://babylonpress.org/"},
+  "author": {
+    "name": "Andrei Stepanov",
+    "email": "eldinor@gmail.com",
+    "url": "https://babylonpress.org/"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -25,6 +27,6 @@
     "@babylonjs/loaders": "^7.32.0",
     "@babylonjs/materials": "^7.32.0",
     "@babylonjs/post-processes": "^7.32.0",
-    "gridjs": "6.1.1"
+    "gridjs": "^6.1.1"
   }
 }

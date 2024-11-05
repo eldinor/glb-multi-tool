@@ -13,4 +13,41 @@
     <script type="module" src="/src/app.ts"></script>
 </body>
 
+</html><!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= VITE_APP_TITLE %></title>
+    <link rel="stylesheet" href="/src/css/main.css">
+</head>
+
+<body>
+  
+    <!-- form action removed for testing only -->
+    <progress id="progressBar" value="0" max="100" ></progress>
+  
+  <nav id="topnavbar">
+    
+    <form id = "uploader" name="uploader" action='' method='post'>
+       
+        <input id="inputchoose" type='file' name='myfile[]' multiple /> 
+        <button class="button-3" type='submit' name='save' >UPLOAD</button>
+      </form>
+      <label class="checkClass">Show Screenshots
+        <input id="showScreenshots" type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+  </nav>
+
+  <div id="sidebar"><div class="insidebar"><span>Choose and upload multiple GLB files.</span></div></div>
+  <div id="centerblock"></div>
+<footer><div>GLB MultiTool<small> very early alpha version</small></div></footer>
+  <canvas id="renderCanvas" touch-action="none"></canvas>
+
+  <script type="module" src="/src/app.ts"></script>
+</body>
+
 </html>
