@@ -280,16 +280,20 @@ export default class MainScene {
           td: {},
         },
       });
-      //  console.log(grid);
+      console.log(grid);
 
+      console.log(grid.config.store.getState());
+      let pState = grid.config.store.getState();
       //  grid.on("rowClick", (...args) => console.log("row: " + JSON.stringify(args), args));
+
+      grid.config.store.subscribe(tableStatesListener);
 
       setTimeout(() => {
         grid.config.store.subscribe(function (state) {
           console.log("checkbox updated", state!.rowSelection);
+          //  tableStatesListener(state, pState);
           //  console.log("data", grid.config.store.state.data);
-
-          console.log(grid.config.pipeline);
+          console.log(grid.config.store.getState());
           console.log("CACHE", grid.config.pipeline.cache);
           let key = Array.from(grid.config.pipeline.cache.keys())[2];
           console.log(key);
@@ -345,4 +349,12 @@ function isGLBAsset(name: string): boolean {
 
 export function parseBool(val: any) {
   return val === true || val === "true";
+}
+
+export function tableStatesListener(state, prevState) {
+  if (prevState.status < state.status) {
+    if (prevState.status === 2 && state.status === 3) {
+      console.log("Ready");
+    }
+  }
 }
