@@ -282,18 +282,14 @@ export default class MainScene {
       });
       console.log(grid);
 
-      console.log(grid.config.store.getState());
-      let pState = grid.config.store.getState();
       //  grid.on("rowClick", (...args) => console.log("row: " + JSON.stringify(args), args));
 
-      grid.config.store.subscribe(tableStatesListener);
-
       setTimeout(() => {
-        grid.config.store.subscribe(function (state) {
+        grid.config.store.subscribe(function (state, prevState) {
           console.log("checkbox updated", state!.rowSelection);
-          //  tableStatesListener(state, pState);
           //  console.log("data", grid.config.store.state.data);
-          console.log(grid.config.store.getState());
+
+          console.log(grid.config.pipeline);
           console.log("CACHE", grid.config.pipeline.cache);
           let key = Array.from(grid.config.pipeline.cache.keys())[2];
           console.log(key);
