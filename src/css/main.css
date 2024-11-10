@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 html,
 body {
   overflow: hidden;
@@ -5,6 +6,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: Roboto;
 }
 
 #renderCanvas {
@@ -23,4 +25,14 @@ body {
   line-height: 35px;
   color: #ca7497;
   font-size: 16px;
+}
+
+#wrapper{
+position:absolute;
+top:0px;
+height: 90vh;
+  background-color: #ca7497;
+  overflow: auto;
+  z-index: 9999;
+  
 }
