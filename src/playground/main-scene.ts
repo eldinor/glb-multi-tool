@@ -14,7 +14,11 @@ import { GLTF2, GLTFFileLoader } from "@babylonjs/loaders";
 import { Grid } from "gridjs";
 import "gridjs/dist/theme/mermaid.css";
 
-import { Ground } from "./ground";
+// Import our custom CSS
+import "../css/styles.scss";
+
+// Import all of Bootstrap's JS
+import * as bootstrap from "bootstrap";
 
 export default class MainScene {
   private camera: ArcRotateCamera;
@@ -106,12 +110,46 @@ export default class MainScene {
     const dataArray: any = [];
     messages.forEach((element) => dataArray.push([element.code, element.message, element.pointer, element.severity]));
 
+    const map = new Map(messages.map((obj) => [obj.code, obj]));
+    const deduplicatedArr = [...map.values()];
+    console.log(deduplicatedArr);
+
     this.grid = new Grid({
       sort: true,
+      pagination: {
+        limit: 10,
+        summary: true,
+        resetPageOnUpdate: true,
+      },
       data: [...dataArray],
       columns: ["Code", "Message", "Pointer", "Severity"],
+      style: {
+        td: {
+          border: "1px solid #ccc",
+        },
+        table: {
+          "word-wrap": "break-word",
+          "word-break": "break-word",
+        },
+      },
     }).render(this.wrapper);
 
     //
   }
+}
+
+export function getDuplicates(arr, key) {
+  const map = {};
+  const duplicates = [];
+
+  arr.forEach((item) => {
+    const keyValue = item[key];
+    if (map[keyValue]) {
+      duplicates.push(item);
+    } else {
+      map[keyValue] = true;
+    }
+  });
+
+  return duplicates;
 }

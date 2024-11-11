@@ -1,17 +1,160 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= VITE_APP_TITLE %></title>
-    <link rel="stylesheet" href="/src/css/main.css">
-</head>
+    <script type="module" src="./src/js/main.js"></script>
+    <link rel="stylesheet" href="./src/css/styles.scss" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+  </head>
 
-<body>
-    <div id="wrapper"></div>
+  <body>
+    <header class="p-3 bg-dark text-white fixed">
+      <div class="container-fluid">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+          </ul>
+
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search" />
+          </form>
+
+          <div class="text-end">
+            <button type="button" class="btn btn-outline-light me-2">Login</button>
+            <button type="button" class="btn btn-warning">Sign-up</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--#########################-->
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <div class="col-auto col-md-4 col-xl-3 px-sm-2 px-0 bg-dark">
+          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+            <!--            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+              <span class="fs-5 d-none d-sm-inline">sdfs_sdfdsf.glb</span>
+            </a>
+        -->
+
+            <!--###############################-->
+            <div class="card text-bg-dark">
+              <img src="./public/texture/amiga.jpg" class="card-img-top" alt="..." />
+
+              </div>
+              <ul class="list-group list-group-flush bg-success">
+                <li class="list-group-item text-bg-dark">Draw Calls</li>
+                
+                <li class="list-group-item text-bg-dark">Triangle Count 2342341</li>
+                <li class="list-group-item text-bg-dark">Vertex Count 92343</li>
+                <li class="list-group-item text-bg-dark">Materials</li>
+                <li class="list-group-item text-bg-dark">Animations</li>
+                <li class="list-group-item text-bg-dark">Attributes</li>
+                <li class="list-group-item text-bg-dark">Influences</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Card link sdf sdf sdf sdf sdf sdf wqerwe rew rwerwe rewr we r</a>
+
+                <table class="table table-dark ">
+  <thead>
+    <tr>
+      <th >Draw Calls</th>
+      <th >Number</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th >1</th>
+      <td>Mark</td>
+
+    </tr>
+    <tr>
+      <th >2</th>
+      <td>Jacob</td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+           
+            </div>
+            <!--###############################-->
+            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+              <li class="nav-item">
+                <a href="#" class="nav-link align-middle px-0">
+                  <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                </a>
+              </li>
+
+
+
+              <li>
+                <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                  <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span>
+                </a>
+                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
+                  </li>
+
+              </li>
+              <li>
+                <a href="#" class="nav-link px-0 align-middle">
+                  <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span>
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <div class="dropdown pb-4">
+              <a
+                href="#"
+                class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                id="dropdownUser1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle" />
+                <span class="d-none d-sm-inline mx-1">loser</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col px-0 py-0">
+          <div id="infotop" class="px-2 py-2 text-bg-dark">
+            <span class="badge rounded-pill text-bg-danger">Errors</span>
+            <span class="badge rounded-pill text-bg-warning">Warnings</span>
+            <span class="badge rounded-pill text-bg-info">Infos</span>
+            <span class="badge rounded-pill text-bg-secondary">Hints</span>
+          </div>
+          <div id="wrapper"></div>
+          <canvas id="renderCanvas" class="w-100 h-90"></canvas>
+        </div>
+      </div>
+    </div>
+
     <script type="module" src="/src/app.ts"></script>
-</body>
-
+  </body>
 </html>

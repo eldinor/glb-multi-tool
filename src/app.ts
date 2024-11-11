@@ -1,12 +1,6 @@
 import "@babylonjs/core/Debug/debugLayer";
 import "@babylonjs/inspector";
-import {
-  Engine,
-  Scene,
-  AxesViewer,
-  Vector3,
-  ArcRotateCamera,
-} from "@babylonjs/core";
+import { Engine, Scene, AxesViewer, Vector3, ArcRotateCamera } from "@babylonjs/core";
 
 import MainScene from "./playground/main-scene";
 
@@ -18,11 +12,13 @@ class App {
 
   constructor() {
     // create the canvas html element and attach it to the webpage
-    this.canvas = document.createElement("canvas");
-    this.canvas.style.width = "100%";
-    this.canvas.style.height = "100%";
-    this.canvas.id = "renderCanvas";
-    document.body.appendChild(this.canvas);
+    // this.canvas = document.createElement("canvas");
+    //  this.canvas.style.width = "100%";
+    //  this.canvas.style.height = "100%";
+    //  this.canvas.id = "renderCanvas";
+    //  document.body.appendChild(this.canvas);
+
+    this.canvas = document.getElementById("renderCanvas")! as HTMLCanvasElement;
 
     this.init();
   }
@@ -92,7 +88,7 @@ class App {
 
   _renderer(): void {
     this.engine.runRenderLoop(() => {
-      this._fps();
+      //  this._fps();
       this.scene.render();
     });
   }
